@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calorie Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">CalorieCalc</div>
+    <ul class="nav-links">
+      <li><a href="#calorie-calculator">Calorie Calculator</a></li>
+      <li><a href="#bmi-calculator">BMI Calculator</a></li>
+      <li><a href="#meal-planner">Meal Planner</a></li>
+      <li><a href="#food-database">Food Database</a></li>
+    </ul>
+    <button id="theme-btn">🌙 Dark Mode</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Welcome to CalorieCalc</h1>
+    <p>Your ultimate tool for health, fitness, and nutrition!</p>
+  </header>
+
+  <!-- Calorie Calculator -->
+  <section id="calorie-calculator" class="calculator">
+    <h2>Calorie Calculator</h2>
+    <form id="calorie-form">
+      <label for="age">Age:</label>
+      <input type="number" id="age" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label for="height">Height (cm):</label>
+      <input type="number" id="height" required>
+
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" required>
+
+      <label for="activity">Activity Level:</label>
+      <select id="activity" required>
+        <option value="1.2">Sedentary (little or no exercise)</option>
+        <option value="1.375">Lightly Active (light exercise/sports 1-3 days/week)</option>
+        <option value="1.55">Moderately Active (moderate exercise/sports 3-5 days/week)</option>
+        <option value="1.725">Very Active (hard exercise/sports 6-7 days/week)</option>
+        <option value="1.9">Extra Active (very hard exercise/sports & physical job)</option>
+      </select>
+
+      <button type="submit">Calculate</button>
+    </form>
+    <div id="calorie-result"></div>
+  </section>
+
+  <!-- BMI Calculator -->
+  <section id="bmi-calculator" class="calculator">
+    <h2>BMI Calculator</h2>
+    <form id="bmi-form">
+      <label for="bmi-height">Height (cm):</label>
+      <input type="number" id="bmi-height" required>
+
+      <label for="bmi-weight">Weight (kg):</label>
+      <input type="number" id="bmi-weight" required>
+
+      <button type="submit">Calculate BMI</button>
+    </form>
+    <div id="bmi-result"></div>
+  </section>
+
+  <!-- Meal Planner -->
+  <section id="meal-planner" class="meal-planner">
+    <h2>Meal Plans</h2>
+    <div class="meal-cards">
+      <div class="card">
+        <h3>1200 Calorie Plan</h3>
+        <p>Breakfast: Oatmeal, Lunch: Salad, Dinner: Grilled Chicken</p>
+      </div>
+      <div class="card">
+        <h3>1500 Calorie Plan</h3>
+        <p>Breakfast: Smoothie, Lunch: Quinoa Bowl, Dinner: Salmon</p>
+      </div>
+      <div class="card">
+        <h3>2000 Calorie Plan</h3>
+        <p>Breakfast: Pancakes, Lunch: Pasta, Dinner: Steak</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food Database -->
+  <section id="food-database" class="food-database">
+    <h2>Food Database</h2>
+    <div class="chart-container">
+      <canvas id="calorie-chart"></canvas>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 CalorieCalc. All rights reserved.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
